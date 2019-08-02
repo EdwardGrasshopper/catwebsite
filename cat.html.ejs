@@ -1,0 +1,22 @@
+<body style="background-color: cyan"> 
+    <link rel="stylesheet" href="/style.css">
+    <H1><%= catname %> says hello </H1>
+    
+    <h2> <%= catstatus%> </h2>
+    <form action="/cats/create" method="post">
+      <textarea name="status"></textarea>
+      <input name="catname" type="hidden" value="<%=catname%>">
+      <button>Update status </button>
+     </form>
+
+    <a href="/cats/<%= catname2%>"> Go to  <%= catname2 %> </a>
+
+    <img src="/<%= catname%>.jpg" class="<%= catname%>center-cropped">
+    <form action="/cats/photo" method="post">
+      <input name="catname" type="hidden" value="<%=catname%>">
+      <input name="photo" type="file">
+      <button> Update cat photo</button>
+    </form>
+  </body>
+
+  

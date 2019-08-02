@@ -1,0 +1,13 @@
+.curiecenter-cropped {
+  object-fit: none; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 1000px;
+  width: 1000px;
+}
+
+.markovcenter-cropped {
+  object-fit: none; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 500px;
+  width: 500px;
+}
