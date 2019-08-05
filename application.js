@@ -60,7 +60,14 @@ app.post('/cats/create', function (req, res) {
 })
 
 app.post('/cats/photo', function (req, res) {
-  res.send("Hello!")
+  res.redirect(`./${req.body.catname}`)
+  console.log(req.files.photo) 
+  req.files.photo.mv(`./assets/${req.body.catname}.jpg`);
+  
+})
+
+app.get('/cats.json', function (req, res) {
+  res.send(catstatuses)
 })
 app.listen(8080);
 

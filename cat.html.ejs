@@ -1,22 +1,34 @@
 <body style="background-color: cyan"> 
     <link rel="stylesheet" href="/style.css">
+    
     <H1><%= catname %> says hello </H1>
     
     <h2> <%= catstatus%> </h2>
     <form action="/cats/create" method="post">
-      <textarea name="status"></textarea>
+      <textarea name="status" style="float:left" rows="3" placeholder="I go through a variety of moods, so anything can do! "></textarea>
       <input name="catname" type="hidden" value="<%=catname%>">
       <button>Update status </button>
      </form>
-
-    <a href="/cats/<%= catname2%>"> Go to  <%= catname2 %> </a>
-
+     <br>
+    <button id="stopbutton">Keep the background color</button>
+    <br>
     <img src="/<%= catname%>.jpg" class="<%= catname%>center-cropped">
-    <form action="/cats/photo" method="post">
+    <form action="/cats/photo" method="post" enctype="multipart/form-data">
       <input name="catname" type="hidden" value="<%=catname%>">
-      <input name="photo" type="file">
+      <input name="photo" 
+        type="file" 
+        accept="image/*" 
+        required 
+        oninvalid="this.setCustomValidity(`The cat admins can't accept this file`)"
+        oninput="this.setCustomValidity('')"
+      >
       <button> Update cat photo</button>
     </form>
+    <br>
+    <a href="/cats/<%= catname2%>"> Go to  <%= catname2 %> </a>
+    <br>
+    <a href="/"> Go to homepage </a>
+    <script src="/browser.js"></script>
   </body>
 
   
